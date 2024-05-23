@@ -2,7 +2,6 @@ package main
 
 import (
 	"text/template"
-
     "io"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -22,11 +21,21 @@ func newTemplate() *Templates {
     }
 }
 
+ type Count struct {
+    Count int 
+}
+
 func main() {
     e := echo.New()
     e.Use(middleware.Logger())
 
+    count := Count { Count: 0 }
     e.Renderer = newTemplate()
 
-    e.GET()
+    e.GET("/", func(c echo.Context) error {
+        count.Count++
+        return c.Render(200, "index", count)
+    })
+
+    e.Logger.Fatal(e.Start(":42069"))
 }
