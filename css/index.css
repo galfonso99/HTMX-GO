@@ -1,11 +1,22 @@
+
 .htmx-indicator {
     opacity:0;
     transition: opacity 500ms ease-in;
 }
 .htmx-request .htmx-indicator{
-    opacity:1
+    opacity:1;
 }
 .htmx-request.htmx-indicator{
-    opacity:1
+    opacity:1;
+}
+.contact.htmx-swapping {
+    opacity:0;
+    transition:opacity 500ms ease-in;
 }
 
+span:before {
+    content: "\00a0"
+}
+span:after {
+    content: "\00a0"
+}

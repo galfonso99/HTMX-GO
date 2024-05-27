@@ -13,7 +13,7 @@ tmp_dir = "tmp"
   exclude_unchanged = false
   follow_symlink = false
   full_bin = ""
-  include_dir = ["cmd", "views", "pkg"]
+  include_dir = ["cmd", "views", "pkg", "css", "images"]
   include_ext = ["go", "html"]
   include_file = []
   kill_delay = "0s"
@@ -37,7 +37,7 @@ tmp_dir = "tmp"
   time = false
 
 [misc]
-  clean_on_exit = false
+  clean_on_exit = true
 
 [screen]
   clear_on_rebuild = false
